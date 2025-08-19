@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>QRIS Payment Barcode</title>
+<style>
+  /* Reset and base */
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  html, body {
+    height: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #f0f0f0;
+    background: #000;
+    overflow-x: hidden;
+  }
+  /* Background Video */
+  #bg-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -2;
+  }
+  /* Overlay */
+  #overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.6);
+    z-index: -1;
+  }
+  /* Container */
+  .container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    background: linear-gradient(90deg, #6094ea, #54e6a0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  /* QR Code Image */
+  .qris-barcode {
+    width: 280px;
+    max-width: 90vw;
+    height: auto;
+    box-shadow: 0 0 30px rgba(84, 230, 160, 0.8);
+    border-radius: 15px;
+    background: white;
+    padding: 15px;
+  }
+  /* Back Button */
+  .back-btn {
+    margin-top: 2.5rem;
+    padding: 12px 28px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    background: #54e6a0;
+    color: #0a0a0a;
+    letter-spacing: 0.05em;
+    transition: background-color 0.3s ease;
+    user-select: none;
+    text-decoration: none;
+    display: inline-block;
+  }
+  .back-btn:hover {
+    background: #40c37a;
+  }
+
+  @media (max-width: 600px) {
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+    }
+    .back-btn {
+      padding: 10px 22px;
+      font-size: 1rem;
+    }
+  }
+</style>
+</head>
+<body>
+  <div id="overlay"></div>
+
+  <div class="container">
+    <h1>Scan QRIS to Pay</h1>
+    <img
+      class="qris-barcode"
+      src="https://files.catbox.moe/6du09c.png"
+      alt="QRIS Barcode"
+    />
+    <a href="payment.html" class="back-btn" aria-label="Back to payment options">← Back to Payment Options</a>
+  </div>
+</body>
+</html>
+
